@@ -1,0 +1,31 @@
+#User function Template for python3
+
+class Solution:
+    
+    #Function to check if brackets are balanced or not.
+    def ispar(self,x):
+        # code here
+        def is_empty(lst):
+            return len(lst) == 0
+        lis=[]
+        if not x:
+            return False
+        else:
+            for i in x:
+                if i==")" or i=="}" or i=="]":
+                    if is_empty(lis):
+                        return False
+                if i=="(" or i=="{" or i=="[":
+                    lis.append(i)
+                elif i==")" or i=="}" or i=="]":
+                    if i==")" and lis[-1]=="(":
+                        lis.pop()
+                    elif i=="}" and lis[-1]=="{":
+                        lis.pop()
+                    elif i=="]" and lis[-1]=="[":
+                        lis.pop()
+                    else:
+                        return False
+            
+        if is_empty(lis):
+            return True
