@@ -1,0 +1,11 @@
+#User function Template for python3
+class Solution:
+    def print2largest(self, arr):
+        # Code Here
+        set1=set(arr)
+        #print(set1)
+        if len(set1)<2:
+            return -1
+        list1=sorted(set1,reverse=True)
+        #print(list1)
+        return list1[1]
