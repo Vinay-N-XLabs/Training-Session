@@ -1,0 +1,20 @@
+class Solution:
+    def subArraySum(self,a, n, s): 
+        i = 0
+        start = 0
+        end = 0
+        target = s
+        s = 0
+        while(i<len(a)):
+            s += a[i]
+            end = i
+            
+            while target<s and start<end:
+                s -= a[start]
+                start += 1
+            if target==s:
+                return [start+1,i+1]    # print(st)
+            i += 1 
+        
+        return [-1]
+       
