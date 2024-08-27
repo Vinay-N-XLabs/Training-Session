@@ -1,0 +1,15 @@
+class Solution:
+    ##Complete this function
+    #Function to find the sum of contiguous subarray with maximum sum.
+    def maxSubArraySum(self,arr):
+        ##Your code here
+        if not arr:
+                return 0
+    
+        max_current=maxglobal=arr[0]
+    
+        for num in arr[1:]:
+            max_current = max(num, max_current + num)
+            maxglobal = max(maxglobal, max_current)
+    
+        return maxglobal
